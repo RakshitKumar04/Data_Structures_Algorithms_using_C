@@ -1,5 +1,5 @@
 # JUIT_C_Programming--2nd-Sem-
-In this I will do all the coding practice.
+This will be consisting of all my coding work that I will be doing in my second semester.
 <br>
 # STRING
 - #### Comparing <br> 
