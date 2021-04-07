@@ -1,28 +1,25 @@
 #include <stdio.h>
-#include <string.h>
 
-int main(void)
+int main()
 {
-    char str[50], search[50];
-    printf("Please enter a string : ");
+    char str[100], substr[100];
+    int i = 0, j = 0, n = 0, m;
+    printf("\n Enter the main string : ");
     gets(str);
-    printf("Please enter a substring to be searched : ");
-    gets(search);
-    puts(str);
-    int flag = 0;
-    for (int i = 0; i < strlen(str); i++)
+    printf("\n Enter the position from which to start the substring: ");
+    scanf("%d", &m);
+    printf("\n Enter the length of the substring: ");
+    scanf("%d", &n);
+    i = m;
+    while (str[i] != '\0' && n > 0)
     {
-        if (str[i] == search)
-        {
-            flag = 1;
-        }
+        substr[j] = str[i];
+        i++;
+        j++;
+        n=n-1;
     }
-    if (flag == 1)
-    {
-        printf("Found");
-    }
-    else
-    {
-        printf("Not Found");
-    }
+    substr[j] = '\0';
+    printf("\n The substring is : ");
+    puts(substr);
+    return 0;
 }
