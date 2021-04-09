@@ -2,8 +2,12 @@
 This will be consisting of all my coding work that I will be doing in my second semester.
 <br>
 # STRING
+- #### Appending
+    In this we will concatenate two string.
 - #### Comparing <br> 
     In this we are comparing to strings.
+- #### Inserting
+    In this we will be inserting a substring in a main sentence.
 - #### Reversing
     In this we are reversing a string.
 - #### Size
