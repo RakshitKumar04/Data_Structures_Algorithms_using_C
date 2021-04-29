@@ -109,8 +109,6 @@ size()
         len++;
     }
     printf("Length of the string using loop : %i", len);
-    int len2 = strlen(str);
-    printf("\nLength of the string using inbuilt function : %i", len2);
     return 0;
 }
 
@@ -172,18 +170,8 @@ upper_lower()
         j++;
     }
     lower[j] = '\0'; //initializing empty space with null
-    printf("String in upper case using logic : ");
+    printf("String in upper case : ");
     puts(upper);
-    printf("String in lower case using logic : ");
+    printf("String in lower case : ");
     puts(lower);
-    printf("String in upper case using built in function : ");
-    for (int i = 0; i < strlen(str); i++)
-    {
-        putchar(toupper(str[i]));
-    }
-    printf("\nString in lower case using built in function : ");
-    for (int i = 0; i < strlen(str); i++)
-    {
-        putchar(tolower(str[i]));
-    }
 }
