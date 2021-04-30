@@ -16,6 +16,8 @@ This will be consisting of all my coding work that I will be doing in my second 
     In this we will extract the substring from a string.   
 - #### Upper & Lower
     In this we are converting lower string to upper and vice versa.
+- #### Mixed Function
+    In this we build a menu driven program, that runs all the above function.
 # DYNAMIC MEMORY ALLOCATION
 - #### calloc
 - #### free
