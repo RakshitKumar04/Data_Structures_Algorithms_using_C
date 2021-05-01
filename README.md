@@ -1,6 +1,17 @@
 # JUIT_C_Programming--2nd-Sem-
 This will be consisting of all my coding work that I will be doing in my second semester.
 <br>
+# ARRAY
+- #### Deletion at the beginning
+- #### Deletion at the end
+- #### Deletion at the entered index
+- #### Insertion at the beginning
+- #### Insertion at the end
+- #### Insertion at the entered index
+# DYNAMIC MEMORY ALLOCATION
+- #### calloc
+- #### free
+- #### malloc
 # STRING
 - #### Appending
     In this we will concatenate two string.
@@ -18,8 +29,5 @@ This will be consisting of all my coding work that I will be doing in my second 
     In this we are converting lower string to upper and vice versa.
 - #### Mixed Function
     In this we build a menu driven program, that runs all the above function.
-# DYNAMIC MEMORY ALLOCATION
-- #### calloc
-- #### free
-- #### malloc
+
 # TREES
