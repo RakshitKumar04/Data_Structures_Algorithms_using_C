@@ -19,31 +19,37 @@ int main(void)
         printf("\n1. For Appending two strings.\n2. For comparing two strings.\n3. For inserting a string at a specific position.");
         printf("\n4. For reversing a string.\n5. To find the size of the string.\n6. For extracting a substring.\n7. For converting upper case to lower case and vice versa.\nEnter '0' to exit.\n");
         scanf("%i", &a);
-        switch (a)
+        if (a > 0)
         {
-        case 1:
-            appending();
-            break;
-        case 2:
-            comparing();
-            break;
-        case 3:
-            inserting();
-            break;
-        case 4:
-            reversing();
-            break;
-        case 5:
-            size();
-            break;
-        case 6:
-            substring();
-            break;
-        case 7:
-            upper_lower();
-            break;
-        default:
-            printf("SORRY!\nWrong Input.");
+            switch (a)
+            {
+            case 1:
+                appending();
+                break;
+            case 2:
+                comparing();
+                break;
+            case 3:
+                inserting();
+                break;
+            case 4:
+                reversing();
+                break;
+            case 5:
+                size();
+                break;
+            case 6:
+                substring();
+                break;
+            case 7:
+                upper_lower();
+                break;
+            default:
+                printf("SORRY!\nWrong Input.");
+            }
+        }
+        else
+        {
             exit(0);
         }
     } while (a != 0);
@@ -55,7 +61,7 @@ void appending()
     char des_str[50];
     char sou_str[50];
     printf("Please enter a destination string : ");
-    gets(des_str);  
+    gets(des_str);
     printf("Please enter the source string : ");
     gets(sou_str);
     int i, j = 0;
@@ -108,7 +114,7 @@ void inserting()
     char substr[50];
     printf("Enter the string to be inserted : ");
     gets(substr);
-    strcat(substr," ");
+    strcat(substr, " ");
     int pos;
     printf("Enter the position at which the string has to be inserted : ");
     scanf("%i", &pos);
@@ -139,7 +145,7 @@ void inserting()
 
 void reversing()
 {
-    char str[50]; // rev_str[50];
+    char str[50];
     printf("Please enter string : ");
     gets(str);
     int i = 0;
