@@ -64,6 +64,11 @@ void deletion(int arr[], int last_index)
         scanf("%i", &a);
         if (a > 0)
         {
+            if (last_index == 0)
+            {
+                printf("Overflow.\nWe cannot delete more elements.");
+                exit(0);
+            }
             switch (a)
             {
             case 1:
