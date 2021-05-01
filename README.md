@@ -8,6 +8,10 @@ This will be consisting of all my coding work that I will be doing in my second 
 - #### Insertion at the beginning
 - #### Insertion at the end
 - #### Insertion at the entered index
+- #### Merged Deletion
+    In this we build a menu driven program to delete at the beginning, end and the entered index number.
+- #### Merged Insertion
+    In this we build a menu driven program to insert at the beginning, end and the entered index number.
 # DYNAMIC MEMORY ALLOCATION
 - #### calloc
 - #### free
