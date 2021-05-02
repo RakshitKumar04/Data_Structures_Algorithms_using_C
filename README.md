@@ -1,5 +1,5 @@
-# JUIT_C_Programming--2nd-Sem-
-This will be consisting of all my coding work that I will be doing in my second semester.
+# DATA STRUCTURE & ALGORITHMS
+Will be implementing the basic algorithms using c language
 <br>
 # ARRAY
 - #### Deletion at the beginning
@@ -16,6 +16,7 @@ This will be consisting of all my coding work that I will be doing in my second 
 - #### calloc
 - #### free
 - #### malloc
+# LINKED LISTS
 # STRING
 - #### Appending
     In this we will concatenate two string.
