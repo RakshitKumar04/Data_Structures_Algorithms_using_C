@@ -2,5 +2,6 @@
     "C_Cpp.errorSquiggles": "Disabled",
     "files.associations": {
         ".c": "cpp",
+        "ll_Insert_at_BGNG.C": "cpp"
     }
 }
