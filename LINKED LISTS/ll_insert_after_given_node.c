@@ -68,8 +68,7 @@ struct node *ll_insert_after_given_node(struct node *start)
     printf("\nPlease enter the value to be inserted : ");
     int val = input();
     printf("Enter the value after which the data has to be inserted : ");
-    int node;
-    scanf("%d", &node); 
+    int node = input();
     new_node = (struct node *)malloc(sizeof(struct node));
     new_node->data = val;
     ptr = start;
