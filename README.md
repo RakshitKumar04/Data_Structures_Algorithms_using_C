@@ -17,6 +17,17 @@ Will be implementing the basic algorithms using c language
 - #### free
 - #### malloc
 # LINKED LISTS
+## +INSERTION
+- #### Traversing a Linked List
+    In this we will create and read a linked list.
+- #### Inserting a node at begining
+    In this we will insert a node at the begining of a already created linked list.
+- #### Inserting a node at end
+    In this we will insert a node at the end of a already created linked list.
+- #### Inserting a node after a given node
+    In this we will insert a node after a given node of a already created linked list.
+- #### Inserting a node before a given node
+    In this we will insert a node before a given node of a already created linked list.
 # STRING
 - #### Appending
     In this we will concatenate two string.
