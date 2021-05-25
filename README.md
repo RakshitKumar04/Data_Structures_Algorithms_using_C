@@ -28,6 +28,13 @@ Will be implementing the basic algorithms using c language
     In this we will insert a node after a given node of a already created linked list.
 - #### Inserting a node before a given node
     In this we will insert a node before a given node of a already created linked list.
+## +DELETION
+- #### Deleting a node at beginning
+    In this we will delete a node at the begining of a already created linked list.
+- #### Deleting a node at end
+    In this we will delete a node at the end of a already created linked list.
+- #### Deletion a node at the given node
+    In this we will delete a node at the given location of a already created linked list.
 # STRING
 - #### Appending
     In this we will concatenate two string.
