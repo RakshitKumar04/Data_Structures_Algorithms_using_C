@@ -96,6 +96,7 @@ struct node *create_ll(struct node *start, int n)
     }
     return start;
 }
+
 struct node *display_ll(struct node *start)
 {
     struct node *ptr;
@@ -127,3 +128,10 @@ struct student display(struct node *ptr)
     printf("HEIGHT : %.2f", ptr->data.height);
     printf("\nWEIGHT : %.2f", ptr->data.weight);
 }
+
+/*
+ROLL NO.    NAME          FATHERS NAME           MOTHERS NAME           ADDRESS                             EMAIL ID        ADHAR NO.   BLOOD GROUP     HEIGHT      WEIGHT
+    1       MR. AYUSH     MR. ABHISHEK KUMAR     MRS. SUMAN KUMARI      GANDHI ROAD, ARYA NAGAR, BARAUT.    abc@gmail.com   122344566    B'+'           5.2 ft      72.6 kg 
+    2
+ */
+                                                                       
