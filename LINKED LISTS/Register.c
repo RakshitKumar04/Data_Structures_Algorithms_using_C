@@ -134,4 +134,3 @@ ROLL NO.    NAME          FATHERS NAME           MOTHERS NAME           ADDRESS 
     1       MR. AYUSH     MR. ABHISHEK KUMAR     MRS. SUMAN KUMARI      GANDHI ROAD, ARYA NAGAR, BARAUT.    abc@gmail.com   122344566    B'+'           5.2 ft      72.6 kg 
     2
  */
-                                                                       
