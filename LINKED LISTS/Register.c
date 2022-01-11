@@ -23,6 +23,8 @@ struct node
     struct node *next;
 };
 
+char class[5];
+FILE *fp;
 struct node *start = NULL;
 struct student input(struct student details);
 struct node *create_ll(struct node *start, int n);
@@ -31,7 +33,6 @@ struct student display(struct node *ptr);
 
 int main(void)
 {
-    char class[5];
     printf("CLASS : ");
     gets(class);
     int strength;
@@ -99,6 +100,11 @@ struct node *create_ll(struct node *start, int n)
 
 struct node *display_ll(struct node *start)
 {
+    fp = fopen(class, "w+");
+    fprintf(fp, "\t\t\t***************************************************** CLASS: %s *****************************************************",class);
+    fprintf(fp, "\n---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+    fprintf(fp, "\n| %-8s | %-24s | %-24s | %-24s | %-36s | %-36s | %-12s | %-11s | %-6s | %-6s |", "ROLL NO.", "NAME", "FATHERS NAME", "MOTHERS NAME", "ADDRESS", "EMAIL ID", "ADHAAR NO.", "BLOOD GROUP", "HEIGHT", "WEIGHT");
+    fprintf(fp, "\n---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
     struct node *ptr;
     ptr = start;
     while (ptr != NULL)
@@ -111,26 +117,5 @@ struct node *display_ll(struct node *start)
 
 struct student display(struct node *ptr)
 {
-    printf("ROLL NO : %i", ptr->data.roll_no);
-    printf("\nNAME : ");
-    puts(ptr->data.name);
-    printf("FATHER NAME : ");
-    puts(ptr->data.fathers_name);
-    printf("MOTHER NAME : ");
-    puts(ptr->data.mothers_name);
-    printf("ADDRESS : ");
-    puts(ptr->data.address);
-    printf("EMAIL ID : ");
-    puts(ptr->data.email_id);
-    printf("ADHAR NO. : %i", ptr->data.adhar_no);
-    printf("\nBLOOD GROUP : ");
-    puts(ptr->data.blood_group);
-    printf("HEIGHT : %.2f", ptr->data.height);
-    printf("\nWEIGHT : %.2f", ptr->data.weight);
+    fprintf(fp, "\n| %-8i | %-24s | %-24s | %-24s | %-36s | %-36s | %-12i | %-11s | %-6.2f | %-6.2f |", ptr->data.roll_no, ptr->data.name, ptr->data.fathers_name, ptr->data.mothers_name, ptr->data.address, ptr->data.email_id, ptr->data.adhar_no, ptr->data.blood_group, ptr->data.height, ptr->data.weight);
 }
-
-/*
-ROLL NO.    NAME          FATHERS NAME           MOTHERS NAME           ADDRESS                             EMAIL ID        ADHAR NO.   BLOOD GROUP     HEIGHT      WEIGHT
-    1       MR. AYUSH     MR. ABHISHEK KUMAR     MRS. SUMAN KUMARI      GANDHI ROAD, ARYA NAGAR, BARAUT.    abc@gmail.com   122344566    B'+'           5.2 ft      72.6 kg 
-    2
- */
