@@ -26,24 +26,32 @@ struct node
 char class[5];
 FILE *fp;
 struct node *start = NULL;
-struct student input(struct student details);
+struct student input_ll(struct student details);
 struct node *create_ll(struct node *start, int n);
+void display_IO(struct node *start);
 struct node *display_ll(struct node *start);
-struct student display(struct node *ptr);
+struct student display_table(struct node *ptr);
 
 int main(void)
 {
+    char school_name[100];
+    printf("SCHOOL NAME: ");
+    gets(school_name);
+    //char class[5];
     printf("CLASS: ");
     gets(class);
+    char class_teacher[24];
+    printf("CLASS TEACHER: ");
+    gets(class_teacher);
     int strength;
     printf("STRENGTH: ");
     scanf("%i", &strength);
     start = create_ll(start, strength);
-    display_ll(start);
+    display_IO(start);
     return 0;
 }
 
-struct student input(struct student details)
+struct student input_ll(struct student details)
 {
     printf("\n----------------------------------------------------------------------------------------");
     printf("\n\n\tROLL NO.: ");
@@ -77,7 +85,7 @@ struct node *create_ll(struct node *start, int n)
     struct node *new_node, *ptr;
     while (n != 0)
     {
-        struct student details = input(details);
+        struct student details = input_ll(details);
         new_node = (struct node *)malloc(sizeof(struct node));
         new_node->data = details;
         if (start == NULL)
@@ -100,27 +108,35 @@ struct node *create_ll(struct node *start, int n)
     return start;
 }
 
-struct node *display_ll(struct node *start)
+void display_IO(struct node *start)
 {
-    fp = fopen(class, "w+");
+    fp = fopen(("Student_Data/%c.txt",class), "w+");
+    //fprintf(fp, "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t%s",school_name);
     fprintf(fp, "\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-    //fprintf(fp, "STRENGTH: ",strength,"/t/t/t/t/tSCHOOL: CHRISTU JYOTHI CONVENT SR. SEC SCHOOL");
     fprintf(fp, "\n\t\t\t\t\t\t\t\t###################################################### CLASS: %s ######################################################",class);
+    //fprintf(fp, "\n\t\t\tSTRENGTH: %-120i",strength);
+    //fprintf(fp, "CLASS TEACHER: %s",class_teacher);
     fprintf(fp, "\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
     fprintf(fp, "\n| %-8s | %-24s | %-24s | %-24s | %-36s | %-36s | %-12s | %-11s | %-6s | %-6s |", "ROLL NO.", "NAME", "FATHERS NAME", "MOTHERS NAME", "ADDRESS", "EMAIL ID", "ADHAAR NO.", "BLOOD GROUP", "HEIGHT", "WEIGHT");
     fprintf(fp, "\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+    display_ll(start);
+    fprintf(fp, "\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+}
+
+struct node *display_ll(struct node *start)
+{
     struct node *ptr;
     ptr = start;
     while (ptr != NULL)
     {
-        display(ptr);
+        display_table(ptr);
         ptr = ptr->next;
     }
-    fprintf(fp, "\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
     return start;
 }
 
-struct student display(struct node *ptr)
+struct student display_table(struct node *ptr)
 {
     fprintf(fp, "\n| %-8i | %-24s | %-24s | %-24s | %-36s | %-36s | %-12i | %-11s | %-6.2f | %-6.2f |", ptr->data.roll_no, ptr->data.name, ptr->data.fathers_name, ptr->data.mothers_name, ptr->data.address, ptr->data.email_id, ptr->data.adhar_no, ptr->data.blood_group, ptr->data.height, ptr->data.weight);
 }
+//input method display method
