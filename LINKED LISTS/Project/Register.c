@@ -23,21 +23,27 @@ struct node
     struct node *next;
 };
 
-char class[5];
 FILE *fp;
 struct node *start = NULL;
+void input();
 struct student input_ll(struct student details);
 struct node *create_ll(struct node *start, int n);
-void display_IO(struct node *start);
+void display_IO(struct node *start,char *class,char *school_name,int strength,char *class_teacher);
 struct node *display_ll(struct node *start);
 struct student display_table(struct node *ptr);
 
 int main(void)
 {
+    input(); 
+    return 0;
+}
+
+void input()
+{
     char school_name[100];
     printf("SCHOOL NAME: ");
     gets(school_name);
-    //char class[5];
+    char class[5];
     printf("CLASS: ");
     gets(class);
     char class_teacher[24];
@@ -47,8 +53,7 @@ int main(void)
     printf("STRENGTH: ");
     scanf("%i", &strength);
     start = create_ll(start, strength);
-    display_IO(start);
-    return 0;
+    display_IO(start,class,school_name,strength,class_teacher);
 }
 
 struct student input_ll(struct student details)
@@ -108,14 +113,14 @@ struct node *create_ll(struct node *start, int n)
     return start;
 }
 
-void display_IO(struct node *start)
+void display_IO(struct node *start,char *class,char *school_name,int strength,char *class_teacher)
 {
-    fp = fopen(("Student_Data/%c.txt",class), "w+");
-    //fprintf(fp, "\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t%s",school_name);
+    fp = fopen(("/Student_Data/%c.txt",class), "w+");
+    fprintf(fp, "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t%s",school_name);
     fprintf(fp, "\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
     fprintf(fp, "\n\t\t\t\t\t\t\t\t###################################################### CLASS: %s ######################################################",class);
-    //fprintf(fp, "\n\t\t\tSTRENGTH: %-120i",strength);
-    //fprintf(fp, "CLASS TEACHER: %s",class_teacher);
+    fprintf(fp, "\n\t\t\tSTRENGTH: %-130i",strength);
+    fprintf(fp, "CLASS TEACHER: %s",class_teacher);
     fprintf(fp, "\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
     fprintf(fp, "\n| %-8s | %-24s | %-24s | %-24s | %-36s | %-36s | %-12s | %-11s | %-6s | %-6s |", "ROLL NO.", "NAME", "FATHERS NAME", "MOTHERS NAME", "ADDRESS", "EMAIL ID", "ADHAAR NO.", "BLOOD GROUP", "HEIGHT", "WEIGHT");
     fprintf(fp, "\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
@@ -139,4 +144,3 @@ struct student display_table(struct node *ptr)
 {
     fprintf(fp, "\n| %-8i | %-24s | %-24s | %-24s | %-36s | %-36s | %-12i | %-11s | %-6.2f | %-6.2f |", ptr->data.roll_no, ptr->data.name, ptr->data.fathers_name, ptr->data.mothers_name, ptr->data.address, ptr->data.email_id, ptr->data.adhar_no, ptr->data.blood_group, ptr->data.height, ptr->data.weight);
 }
-//input method display method
