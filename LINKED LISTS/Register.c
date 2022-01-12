@@ -33,10 +33,10 @@ struct student display(struct node *ptr);
 
 int main(void)
 {
-    printf("CLASS : ");
+    printf("CLASS: ");
     gets(class);
     int strength;
-    printf("STRENGTH : ");
+    printf("STRENGTH: ");
     scanf("%i", &strength);
     start = create_ll(start, strength);
     display_ll(start);
@@ -45,28 +45,30 @@ int main(void)
 
 struct student input(struct student details)
 {
-    printf("ROLL NO : ");
+    printf("\n----------------------------------------------------------------------------------------");
+    printf("\n\n\tROLL NO.: ");
     scanf("%i", &details.roll_no);
-    printf("NAME : ");
+    printf("\tNAME: ");
     gets(details.name);
     gets(details.name);
-    printf("FATHER NAME : ");
+    printf("\tFATHER NAME: ");
     gets(details.fathers_name);
-    printf("MOTHER NAME : ");
+    printf("\tMOTHER NAME: ");
     gets(details.mothers_name);
-    printf("ADDRESS : ");
+    printf("\tADDRESS: ");
     gets(details.address);
-    printf("EMAIL ID : ");
+    printf("\tEMAIL ID: ");
     gets(details.email_id);
-    printf("ADHAR NO. : ");
+    printf("\tADHAR NO.: ");
     scanf("%i", &details.adhar_no);
-    printf("BLOOD GROUP : ");
+    printf("\tBLOOD GROUP: ");
     gets(details.blood_group);
     gets(details.blood_group);
-    printf("HEIGHT : ");
+    printf("\tHEIGHT: ");
     scanf("%f", &details.height);
-    printf("WEIGHT : ");
+    printf("\tWEIGHT: ");
     scanf("%f", &details.weight);
+    printf("\n----------------------------------------------------------------------------------------");
     return details;
 }
 
@@ -101,10 +103,12 @@ struct node *create_ll(struct node *start, int n)
 struct node *display_ll(struct node *start)
 {
     fp = fopen(class, "w+");
-    fprintf(fp, "\t\t\t***************************************************** CLASS: %s *****************************************************",class);
-    fprintf(fp, "\n---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+    fprintf(fp, "\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+    //fprintf(fp, "STRENGTH: ",strength,"/t/t/t/t/tSCHOOL: CHRISTU JYOTHI CONVENT SR. SEC SCHOOL");
+    fprintf(fp, "\n\t\t\t\t###################################################### CLASS: %s ######################################################",class);
+    fprintf(fp, "\n\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
     fprintf(fp, "\n| %-8s | %-24s | %-24s | %-24s | %-36s | %-36s | %-12s | %-11s | %-6s | %-6s |", "ROLL NO.", "NAME", "FATHERS NAME", "MOTHERS NAME", "ADDRESS", "EMAIL ID", "ADHAAR NO.", "BLOOD GROUP", "HEIGHT", "WEIGHT");
-    fprintf(fp, "\n---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
+    fprintf(fp, "\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
     struct node *ptr;
     ptr = start;
     while (ptr != NULL)
@@ -112,6 +116,7 @@ struct node *display_ll(struct node *start)
         display(ptr);
         ptr = ptr->next;
     }
+    fprintf(fp, "\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
     return start;
 }
 
