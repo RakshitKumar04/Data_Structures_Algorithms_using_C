@@ -56,6 +56,34 @@ void input()
     display_IO(start,class,school_name,strength,class_teacher);
 }
 
+struct node *create_ll(struct node *start, int n)
+{
+    struct node *new_node, *ptr;
+    while (n != 0)
+    {
+        struct student details = input_ll(details);
+        new_node = (struct node *)malloc(sizeof(struct node));
+        new_node->data = details;
+        if (start == NULL)
+        {
+            start = new_node;
+            new_node->next = NULL;
+        }
+        else
+        {
+            ptr = start;
+            while (ptr->next != NULL)
+            {
+                ptr = ptr->next;
+            }
+            ptr->next = new_node;
+            new_node->next = NULL;
+        }
+        n--;
+    }
+    return start;
+}
+
 struct student input_ll(struct student details)
 {
     printf("\n----------------------------------------------------------------------------------------");
@@ -83,34 +111,6 @@ struct student input_ll(struct student details)
     scanf("%f", &details.weight);
     printf("\n----------------------------------------------------------------------------------------");
     return details;
-}
-
-struct node *create_ll(struct node *start, int n)
-{
-    struct node *new_node, *ptr;
-    while (n != 0)
-    {
-        struct student details = input_ll(details);
-        new_node = (struct node *)malloc(sizeof(struct node));
-        new_node->data = details;
-        if (start == NULL)
-        {
-            start = new_node;
-            new_node->next = NULL;
-        }
-        else
-        {
-            ptr = start;
-            while (ptr->next != NULL)
-            {
-                ptr = ptr->next;
-            }
-            ptr->next = new_node;
-            new_node->next = NULL;
-        }
-        n--;
-    }
-    return start;
 }
 
 void display_IO(struct node *start,char *class,char *school_name,int strength,char *class_teacher)
