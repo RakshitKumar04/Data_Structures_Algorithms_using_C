@@ -115,8 +115,7 @@ struct student input_ll(struct student details)
 
 void display_IO(struct node *start,char *class,char *school_name,int strength,char *class_teacher)
 {
-    strcat(class,".txt");
-    fp = fopen(, "w+");
+    fp = fopen(class, "w+");
     fprintf(fp, "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t%s",school_name);
     fprintf(fp, "\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
     fprintf(fp, "\n\t\t\t\t\t\t\t\t###################################################### CLASS: %s ######################################################",class);
