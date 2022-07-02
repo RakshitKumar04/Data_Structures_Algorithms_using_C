@@ -1,7 +1,9 @@
 {
     "C_Cpp.errorSquiggles": "Disabled",
     "files.associations": {
+        "*.c": "c",
         ".c": "cpp",
-        "ll_Insert_at_BGNG.C": "cpp"
+        "ll_Insert_at_BGNG.C": "cpp",
+        "Stack_using_LinkedList.C": "cpp"
     }
 }
