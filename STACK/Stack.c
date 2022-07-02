@@ -48,6 +48,8 @@ int main(void)
         case 4:
             display(st);
             break;
+        case 5:
+        break;
         default:
             printf("\nSORRY! Wrong Input.\nPlease enter the correct choice.");
             break;
