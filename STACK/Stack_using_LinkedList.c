@@ -10,12 +10,13 @@ struct stack
 
 struct stack *top = NULL;
 struct stack *push(struct stack *top, int val);
-struct stck *pop(struct stack *);
-int peek(struct stack *);
+struct stack *pop(struct stack *top);
+int peek(struct stack *top);
+struct stack *display(struct stack *top);
 
 int main(void)
 {
-    int option;
+    int option, val;
     do
     {
         printf("\n\n***********MAIN MENU***********");
@@ -35,16 +36,16 @@ int main(void)
             break;
         case 2:
             top = pop(top);
-            if(top != -1)
-            {
-                printf("\nNo. poped from stack: %i",top);
-            }
             break;
         case 3:
-            int val = peek(top);
+            val = peek(top);
             if(val != -1)
             {
                 printf("\nNo. at the top of stack: %i",val);
+            }
+            else
+            {
+                printf("\n!!! STACK IS EMPTY !!!");
             }
             break;
         case 4:
@@ -60,17 +61,67 @@ int main(void)
     return 0;
 }
 
-struct stack *push(struct stack *, int val)
+struct stack *push(struct stack *top, int val)
 {
-
+    struct stack *ptr = (struct stack *)malloc(sizeof(struct stack));
+    ptr->data = val;
+    if(top == NULL)
+    {
+        ptr->next = NULL;
+        top = ptr;
+    }
+    else
+    {
+        ptr->next = top;
+        top = ptr;
+    }
+    return top;
 }
 
-struct stck *pop(struct stack *)
+struct stack *pop(struct stack *top)
 {
-
+    struct stack *ptr = top;
+    if(top == NULL)
+    {
+        printf("\n!!! STACK UNDERFLOW !!!");
+    }
+    else
+    {
+        top = top->next;
+        printf("\nNo. poped from stack: %i", ptr->data);
+        free(ptr);
+    }
+    return top;
 }
 
-int peek(struct stack *)
+int peek(struct stack *top)
 {
+    if(top == NULL)
+    {
+        return -1;
+    }
+    else
+    {
+        return top->data;
+    }
+}
 
+struct stack *display(struct stack *top)
+{
+    struct stack *ptr = top;
+    if(top == NULL)
+    {
+        printf("\n!!! STACK IS EMPTY !!!");
+    }
+    else
+    {
+        printf("\n\t+---+");
+        while(ptr != NULL)
+        {
+            printf("\n\t| %i |", ptr->data);
+            printf("\n\t+---+");
+            ptr = ptr->next;
+        }
+    }
+    return top;
 }
